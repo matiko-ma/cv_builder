@@ -1,0 +1,446 @@
+*{
+    box-sizing: border-box;
+}
+
+
+/* Шрифт Вышки https://www.hse.ru/info/brandbook/#font */
+@font-face{
+    font-family: "HSE Sans";
+    src: 
+    url("./fonts/HSESans-Regular.otf") format("opentype");
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: "HSE Sans";
+    src: 
+    url("./fonts/HSESans-SemiBold.otf") format("opentype");
+    font-weight: 500;
+}
+
+@font-face{
+    font-family: "HSE Sans";
+    src: 
+    url("./fonts/HSESans-Bold.otf") format("opentype");
+    font-weight: bold;
+}
+
+@font-face{
+    font-family: "HSE Sans";
+    src: 
+    url("./fonts/HSESans-Black.otf") format("opentype");
+    font-weight: 900;
+}
+
+@font-face{
+    font-family: "HSE Sans";
+    src: 
+    url("./fonts/HSESans-Thin.otf") format("opentype");
+    font-weight: 100;
+}
+
+@font-face{
+    font-family: "HSE Sans";
+    src: 
+    url("./fonts/HSESans-Italic.otf") format("opentype");
+    font-style: italic;
+}
+
+
+
+
+/* Глобальные переменные. Цвета подобраны по брендбуку Вышки */
+:root{
+    --color-main: #0F2D69;
+    --color-accent_1: #CDDCF0;
+    --color-accent_2: #0FA0D7;
+    --color-accent_3: #EB691E;
+    --color-accent_4: #E61E3C;
+    --color-accent_5: #009B64;
+    --color-accent_6: #FFFFFF;
+
+    --typography-font: "HSE Sans", sans-serif;
+    --typography-weight-regular: normal;
+    --typography-weight-semibold: 500;
+    --typography-weight-bold: bold;
+    --typography-weight-black: 900;
+    --typography-weight-thin: 100;
+}
+
+
+
+
+/* Общие стили */
+body{
+    font-family: var(--typography-font);
+    font-weight: var(--typography-weight-regular);
+    color: var(--color-main);
+    font-size: 20px;
+    line-height: normal;
+}
+
+.h1{
+    font-family: var(--typography-font);
+    font-weight: var(--typography-weight-black);
+    font-size: 48px;
+}
+
+.h2{
+    font-family: var(--typography-font);
+    font-weight: var(--typography-weight-bold);
+    font-size: 32px;
+}
+
+.h3{
+    font-family: var(--typography-font);
+    font-weight: var(--typography-weight-bold);
+    font-size: 26px;
+}
+
+.input_head{
+    font-family: var(--typography-font);
+    font-weight: var(--typography-weight-semibold);
+    font-size: 20px;
+}
+
+.input_years{
+    font-family: var(--typography-font);
+    font-weight: var(--typography-weight-thin);
+    font-size: 16px;
+}
+
+.blocking{
+    padding: 0px 100px;
+    margin: 50px 0px;
+    max-width: 1440px;
+    justify-self: center;
+    width: 100%;
+}
+
+.blocking_heading{
+    padding: 50px 100px 0px;
+    max-width: 1440px;
+    justify-self: center;
+    width: 100%;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.ltl_block{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+
+/* Стили для index.html*/
+.pics{
+    display: flex;
+    gap: 50px;
+    align-self: center;
+}
+
+.pics_1{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.imgS{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.imgB{
+    height: 850px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+/* Стили для cv_*.html*/
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: flex-start;
+}
+
+nav{
+    display: flex;
+    gap: 2px;
+}
+
+.input_line{
+    display: flex;
+    gap: 20px;
+}
+
+.input_block{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1 1;
+}
+
+.go_back{
+    color: var(--color-accent_1);
+    text-decoration: none;
+    align-self: center;
+}
+
+.work_current{
+    display: flex;
+    justify-content: space-between;
+}
+
+.work_current_checkbox{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.adt_block{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+
+
+
+/* Стили компонентов */
+
+/* Кнопка создания/генерации CV */
+.btn_create{
+    color: var(--color-accent_6);
+    background-color: var(--color-accent_3);
+    border-radius: 5px;
+    border: 2px solid var(--color-accent_3);
+    padding: 20px 40px;
+    cursor: pointer;
+}
+
+.btn_create:hover{
+    color: var(--color-accent_3);
+    background-color: var(--color-accent_6);
+}
+
+/* Кнопка меню */
+.menu_btn{
+    text-decoration: none;
+    color: var(--color-accent_6);
+    background-color: var(--color-main);
+    border-radius: 10px 10px 0px 0px;
+    border: 2px solid var(--color-main);
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.menu_btn:hover, .active{
+    color: var(--color-main);
+    background-color: var(--color-accent_6);
+    border-bottom: 0px;
+}
+
+/* Кнопка перехода на следующий шаг */
+.btn_next{
+    color: var(--color-accent_6);
+    background-color: var(--color-accent_2);
+    border-radius: 5px;
+    border: 2px solid var(--color-accent_2);
+    width: fit-content;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+.btn_next:hover{
+    color: var(--color-accent_2);
+    background-color: var(--color-accent_6);
+}
+
+/* Поля ввода информации */
+.input{
+    padding: 10px 15px;
+    border: 1px solid var(--color-main);
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.input:hover{
+    border-color: var(--color-accent_2);
+}
+
+.input:focus{
+    border-color: var(--color-accent_2);
+    outline: none;
+}
+
+input::placeholder, textarea::placeholder{
+    font-family: var(--typography-font);
+    font-weight: var(--typography-weight-thin);
+    font-size: 20px;
+    color: var(--color-main);
+}
+
+input[placeholder], textarea[placeholder]{
+    font-family: var(--typography-font);
+    font-weight: var(--typography-weight-regular);
+    font-size: 20px;
+    color: var(--color-main);
+}
+
+/* Поле выбора фото */
+input#photo_input{
+    display: none;
+}
+
+.photo_label{
+    width: 172px;
+    height: 172px;
+    border: 2px solid var(--color-accent_1);
+    border-radius: 150px;
+    background-color: var(--color-accent_1);
+    cursor: pointer;
+}
+
+.photo_label:hover{
+    border-color: var(--color-accent_2);
+}
+
+/* Кнопка добавления карточки */
+.btn_add{
+    font-weight: bold;
+    color: var(--color-accent_6);
+    background-color: var(--color-main);
+    border-radius: 5px;
+    border: 2px solid var(--color-main);
+    padding: 10px 20px;    
+    width: fit-content;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.btn_add:hover{
+    color: var(--color-main);
+    background-color: var(--color-accent_6);
+}
+
+/* Карточка */
+.card{
+    border: 1px solid var(--color-main);
+    border-radius: 5px;
+    padding: 10px 30px 10px 20px;
+    display: flex;
+    gap: 50px;
+}
+
+.card:hover, .card:active{
+    border-color: var(--color-accent_5);
+}
+
+.card_text{
+    flex-grow: 1;
+}
+
+/* Иконки на карточке */
+.delete_svg{
+    fill: var(--color-main);
+    cursor: pointer;
+}
+
+.delete_svg:hover{
+    fill: var(--color-accent_4);
+}
+
+.drag_svg{
+    fill: var(--color-main);
+    cursor: move;
+}
+
+.drag_svg:hover{
+    fill: var(--color-accent_5);
+}
+
+/* Checkbox */
+input[type="checkbox"]{
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    border: 1px solid var(--color-main);
+    position: relative;
+}
+
+input[type="checkbox"]:hover {
+    border-color: var(--color-accent_2);
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--color-accent_2);
+    border-color: var(--color-accent_2);
+    color: var(--color-accent_6);
+}
+
+input[type="checkbox"]:checked::after {
+    content: "\2714";
+    position: absolute;
+    width: 100%;
+    line-height: 15px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Drop-down list */
+select, option{
+    font-family: var(--typography-font);
+    font-weight: var(--typography-weight-regular);
+    color: var(--color-main);
+    font-size: 20px;
+}
+
+.input_lvl{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 300px;
+}
+
+
+
+
+/* Рандомные вещи, которые я не знала, как по-другому оформить */
+.text{
+    margin-bottom: 15px;
+}
+
+.center{
+    text-align: center;
+}
+
+.blue{
+    background-color: var(--color-main);
+}
+
+.white{
+    color: var(--color-accent_6);
+}
+
+.lang{
+    margin: 20px 0px;
+}
+
+::selection {
+    background: var(--color-accent_3);
+    color: var(--color-accent_6);
+}
