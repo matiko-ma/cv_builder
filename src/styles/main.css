@@ -1,48 +1,48 @@
-*{
+* {
     box-sizing: border-box;
 }
 
 
 /* Шрифт Вышки https://www.hse.ru/info/brandbook/#font */
-@font-face{
+@font-face {
     font-family: "HSE Sans";
-    src: 
-    url("./fonts/HSESans-Regular.otf") format("opentype");
+    src:
+        url("./fonts/HSESans-Regular.otf") format("opentype");
     font-weight: normal;
 }
 
-@font-face{
+@font-face {
     font-family: "HSE Sans";
-    src: 
-    url("./fonts/HSESans-SemiBold.otf") format("opentype");
+    src:
+        url("./fonts/HSESans-SemiBold.otf") format("opentype");
     font-weight: 500;
 }
 
-@font-face{
+@font-face {
     font-family: "HSE Sans";
-    src: 
-    url("./fonts/HSESans-Bold.otf") format("opentype");
+    src:
+        url("./fonts/HSESans-Bold.otf") format("opentype");
     font-weight: bold;
 }
 
-@font-face{
+@font-face {
     font-family: "HSE Sans";
-    src: 
-    url("./fonts/HSESans-Black.otf") format("opentype");
+    src:
+        url("./fonts/HSESans-Black.otf") format("opentype");
     font-weight: 900;
 }
 
-@font-face{
+@font-face {
     font-family: "HSE Sans";
-    src: 
-    url("./fonts/HSESans-Thin.otf") format("opentype");
+    src:
+        url("./fonts/HSESans-Thin.otf") format("opentype");
     font-weight: 100;
 }
 
-@font-face{
+@font-face {
     font-family: "HSE Sans";
-    src: 
-    url("./fonts/HSESans-Italic.otf") format("opentype");
+    src:
+        url("./fonts/HSESans-Italic.otf") format("opentype");
     font-style: italic;
 }
 
@@ -50,7 +50,7 @@
 
 
 /* Глобальные переменные. Цвета подобраны по брендбуку Вышки */
-:root{
+:root {
     --color-main: #0F2D69;
     --color-accent_1: #CDDCF0;
     --color-accent_2: #0FA0D7;
@@ -71,7 +71,7 @@
 
 
 /* Общие стили */
-body{
+body {
     font-family: var(--typography-font);
     font-weight: var(--typography-weight-regular);
     color: var(--color-main);
@@ -79,37 +79,37 @@ body{
     line-height: normal;
 }
 
-.h1{
+.h1 {
     font-family: var(--typography-font);
     font-weight: var(--typography-weight-black);
     font-size: 48px;
 }
 
-.h2{
+.h2 {
     font-family: var(--typography-font);
     font-weight: var(--typography-weight-bold);
     font-size: 32px;
 }
 
-.h3{
+.h3 {
     font-family: var(--typography-font);
     font-weight: var(--typography-weight-bold);
     font-size: 26px;
 }
 
-.input_head{
+.input_head {
     font-family: var(--typography-font);
     font-weight: var(--typography-weight-semibold);
     font-size: 20px;
 }
 
-.input_years{
+.input_years {
     font-family: var(--typography-font);
     font-weight: var(--typography-weight-thin);
     font-size: 16px;
 }
 
-.blocking{
+.blocking {
     padding: 0px 100px;
     margin: 50px 0px;
     max-width: 1440px;
@@ -117,48 +117,54 @@ body{
     width: 100%;
 }
 
-.blocking_heading{
+.blocking_heading {
     padding: 50px 100px 0px;
     max-width: 1440px;
     justify-self: center;
     width: 100%;
 }
 
-.main{
+.main {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.ltl_block{
+.ltl_block {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.cards_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 
 
 
 /* Стили для index.html*/
-.pics{
+.pics {
     display: flex;
     gap: 50px;
     align-self: center;
 }
 
-.pics_1{
+.pics_1 {
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-.imgS{
+.imgS {
     height: 400px;
     width: 100%;
     object-fit: cover;
 }
 
-.imgB{
+.imgB {
     height: 850px;
     width: 100%;
     object-fit: cover;
@@ -168,48 +174,48 @@ body{
 
 
 /* Стили для cv_*.html*/
-header{
+header {
     display: flex;
     flex-direction: column;
     gap: 25px;
     justify-content: flex-start;
 }
 
-nav{
+nav {
     display: flex;
     gap: 2px;
 }
 
-.input_line{
+.input_line {
     display: flex;
     gap: 20px;
 }
 
-.input_block{
+.input_block {
     display: flex;
     flex-direction: column;
     gap: 5px;
     flex: 1 1;
 }
 
-.go_back{
+.go_back {
     color: var(--color-accent_1);
     text-decoration: none;
     align-self: center;
 }
 
-.work_current{
+.work_current {
     display: flex;
     justify-content: space-between;
 }
 
-.work_current_checkbox{
+.work_current_checkbox {
     display: flex;
     gap: 5px;
     align-items: center;
 }
 
-.adt_block{
+.adt_block {
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -221,7 +227,7 @@ nav{
 /* Стили компонентов */
 
 /* Кнопка создания/генерации CV */
-.btn_create{
+.btn_create {
     color: var(--color-accent_6);
     background-color: var(--color-accent_3);
     border-radius: 5px;
@@ -230,13 +236,13 @@ nav{
     cursor: pointer;
 }
 
-.btn_create:hover{
+.btn_create:hover {
     color: var(--color-accent_3);
     background-color: var(--color-accent_6);
 }
 
 /* Кнопка меню */
-.menu_btn{
+.menu_btn {
     text-decoration: none;
     color: var(--color-accent_6);
     background-color: var(--color-main);
@@ -246,14 +252,15 @@ nav{
     cursor: pointer;
 }
 
-.menu_btn:hover, .active{
+.menu_btn:hover,
+.active {
     color: var(--color-main);
     background-color: var(--color-accent_6);
     border-bottom: 0px;
 }
 
 /* Кнопка перехода на следующий шаг */
-.btn_next{
+.btn_next {
     color: var(--color-accent_6);
     background-color: var(--color-accent_2);
     border-radius: 5px;
@@ -263,36 +270,38 @@ nav{
     cursor: pointer;
 }
 
-.btn_next:hover{
+.btn_next:hover {
     color: var(--color-accent_2);
     background-color: var(--color-accent_6);
 }
 
 /* Поля ввода информации */
-.input{
+.input {
     padding: 10px 15px;
     border: 1px solid var(--color-main);
     border-radius: 5px;
     flex-grow: 1;
 }
 
-.input:hover{
+.input:hover {
     border-color: var(--color-accent_2);
 }
 
-.input:focus{
+.input:focus {
     border-color: var(--color-accent_2);
     outline: none;
 }
 
-input::placeholder, textarea::placeholder{
+input::placeholder,
+textarea::placeholder {
     font-family: var(--typography-font);
     font-weight: var(--typography-weight-thin);
     font-size: 20px;
     color: var(--color-main);
 }
 
-input[placeholder], textarea[placeholder]{
+input[placeholder],
+textarea[placeholder] {
     font-family: var(--typography-font);
     font-weight: var(--typography-weight-regular);
     font-size: 20px;
@@ -300,44 +309,51 @@ input[placeholder], textarea[placeholder]{
 }
 
 /* Поле выбора фото */
-input#photo_input{
+input#photo_input {
     display: none;
 }
 
-.photo_label{
-    width: 172px;
-    height: 172px;
+.photo_label {
+    width: 200px;
+    height: 200px;
     border: 2px solid var(--color-accent_1);
     border-radius: 150px;
     background-color: var(--color-accent_1);
     cursor: pointer;
+    object-fit: cover;
 }
 
-.photo_label:hover{
+.photo_label:hover {
     border-color: var(--color-accent_2);
 }
 
+.photo_block_input {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
 /* Кнопка добавления карточки */
-.btn_add{
+.btn_add {
     font-weight: bold;
     color: var(--color-accent_6);
     background-color: var(--color-main);
     border-radius: 5px;
     border: 2px solid var(--color-main);
-    padding: 10px 20px;    
+    padding: 10px 20px;
     width: fit-content;
     cursor: pointer;
     font-size: 20px;
     margin-top: 10px;
 }
 
-.btn_add:hover{
+.btn_add:hover {
     color: var(--color-main);
     background-color: var(--color-accent_6);
 }
 
 /* Карточка */
-.card{
+.card {
     border: 1px solid var(--color-main);
     border-radius: 5px;
     padding: 10px 30px 10px 20px;
@@ -345,35 +361,38 @@ input#photo_input{
     gap: 50px;
 }
 
-.card:hover, .card:active{
+.card:hover,
+.card:active {
     border-color: var(--color-accent_5);
 }
 
-.card_text{
+.card_text {
     flex-grow: 1;
 }
 
 /* Иконки на карточке */
-.delete_svg{
+.delete_svg {
     fill: var(--color-main);
     cursor: pointer;
+    width: 20px;
 }
 
-.delete_svg:hover{
+.delete_svg:hover {
     fill: var(--color-accent_4);
 }
 
-.drag_svg{
+.drag_svg {
     fill: var(--color-main);
     cursor: move;
+    width: 22px;
 }
 
-.drag_svg:hover{
+.drag_svg:hover {
     fill: var(--color-accent_5);
 }
 
 /* Checkbox */
-input[type="checkbox"]{
+input[type="checkbox"] {
     appearance: none;
     width: 15px;
     height: 15px;
@@ -402,14 +421,15 @@ input[type="checkbox"]:checked::after {
 }
 
 /* Drop-down list */
-select, option{
+select,
+option {
     font-family: var(--typography-font);
     font-weight: var(--typography-weight-regular);
     color: var(--color-main);
     font-size: 20px;
 }
 
-.input_lvl{
+.input_lvl {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -420,27 +440,240 @@ select, option{
 
 
 /* Рандомные вещи, которые я не знала, как по-другому оформить */
-.text{
+.text {
     margin-bottom: 15px;
 }
 
-.center{
+.center {
     text-align: center;
 }
 
-.blue{
+.blue {
     background-color: var(--color-main);
 }
 
-.white{
+.white {
     color: var(--color-accent_6);
 }
 
-.lang{
+.adt_cards {
     margin: 20px 0px;
+}
+
+div:empty {
+    display: none
 }
 
 ::selection {
     background: var(--color-accent_3);
     color: var(--color-accent_6);
+}
+
+
+
+
+/* Адаптация под планшеты */
+@media (width <=850px) {
+    .blocking {
+        padding: 0px 65px;
+    }
+
+    .pics {
+        flex-direction: column;
+    }
+
+    .imgS,
+    .imgB {
+        height: 250px;
+    }
+
+    .blocking_heading {
+        padding: 50px 65px 0;
+    }
+
+    .ed1,
+    .ed3 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .exp1,
+    .exp2 {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (width <=850px) and (width > 450px) {
+    .menu_btn {
+        padding: 10px 17px;
+    }
+}
+
+
+/* Адаптация под телефон */
+@media (width <=450px) {
+    .h1 {
+        font-size: 35px;
+        line-height: 35px;
+    }
+
+    .h2 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    .h3 {
+        font-size: 18px;
+    }
+
+    body,
+    .input_head,
+    input::placeholder,
+    textarea::placeholder,
+    input[placeholder],
+    textarea[placeholder] {
+        font-size: 16px;
+    }
+
+    .input_years {
+        font-size: 12px;
+    }
+
+    .card_body {
+        font-size: 16px;
+        line-height: 14px;
+    }
+
+    .blocking {
+        padding: 0px 35px;
+        margin: 35px 0px 50px;
+    }
+
+    .main {
+        gap: 20px;
+    }
+
+    .pics,
+    .pics_1 {
+        gap: 20px;
+        margin-top: -10px;
+    }
+
+    .imgS,
+    .imgB {
+        height: 220px;
+    }
+
+    .text {
+        margin-bottom: 0px;
+    }
+
+    .blocking_heading {
+        padding: 50px 35px 0;
+    }
+
+    .menu {
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin-right: -35px;
+        margin-left: -35px;
+        white-space: nowrap;
+        scrollbar-width: none;
+    }
+
+    .pos1 {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .input {
+        padding: 8px 10px;
+    }
+
+    .photo_block,
+    .about1,
+    .about2,
+    .ed2,
+    .adt1,
+    .adt2,
+    .adt3 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .photo_block_input {
+        float: none;
+        display: flex;
+        justify-content: center;
+        margin: 0px;
+    }
+
+    .btn_create {
+        padding: 13px 0px;
+        width: 100%;
+    }
+
+    .btn_next {
+        width: 100%;
+    }
+
+    .input_block {
+        gap: 2px;
+    }
+
+    .card {
+        padding: 8px 20px 8px 15px;
+        gap: 20px;
+    }
+
+    .card_text {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .btn_add {
+        padding: 8px auto;
+        width: 100%;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    input[type="checkbox"] {
+        width: 13px;
+        height: 13px;
+        margin: 0px;
+    }
+
+    input[type="checkbox"]:checked::after {
+        line-height: 12px;
+        font-size: 10px;
+    }
+
+    select,
+    option {
+        font-size: 16px;
+    }
+
+    .input_lvl {
+        gap: 2px;
+        min-width: fit-content;
+    }
+}
+
+@media (width < 375px) {
+    .work_current {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .delete_svg {
+        width: 17px;
+    }
+
+    .drag_svg {
+        width: 19px;
+    }
 }

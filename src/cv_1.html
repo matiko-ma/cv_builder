@@ -6,12 +6,13 @@
     <title>Конструктор резюме</title>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/cv_1.js"></script>
 </head>
 <body>
     <section class="blue">
         <header class="blocking_heading">
             <h1 class="h1 white">Конструктор резюме</h1>
-            <nav>
+            <nav class="menu">
                 <a class="menu_btn input_head active" href="cv_1.html">Фото</a>
                 <a class="menu_btn input_head" href="cv_2.html">О себе</a>
                 <a class="menu_btn input_head" href="cv_3.html">Образование</a>
@@ -21,21 +22,22 @@
         </header>
     </section>
     <section class="blocking main">
-        <div class="input_line">
+        <div class="input_line pos1">
             <h2 class="h2">Желаемая должность:</h2>
-            <input class="input" placeholder="PR-менеджер">
+            <input class="input" id="posName" placeholder="PR-менеджер">
         </div>
         <div class="ltl_block">
             <h2 class="h2">Профессиональная фотография</h2>
-            <div class="input_line">
-                <label for="photo_input">
-                    <div class="photo_label"></div>
-                </label>
-                <input id="photo_input" type="file" accept="image/*">
-                <div class="ltl_block">
-                    <p>Профессиональная фотография в резюме необязательна, но является важным компонентом вашего резюме, который позволяет потенциальным работодателям наглядно представить вас. Использование профессиональной фотографии может улучшить ваше резюме, сделав его более личным и запоминающимся. Однако важно убедиться, что фотография соответствует профессиональным стандартам, чтобы создать положительное первое впечатление.</p>
-                    <p>Больше советов и примеров фотографий можно найти по ссылке. Также напоминаем, что фотографию на резюме можно сделать во время ближайшего Дня карьеры.</p>
+            <div class="photo_block">
+                <div class="photo_block_input">
+                    <label for="photo_input">
+                        <img class="photo_label">
+                    </label>
+                    <input id="photo_input" type="file" accept="image/*">
                 </div>
+                <p class="text">Профессиональная фотография в резюме необязательна, но является важным компонентом вашего резюме, который позволяет потенциальным работодателям наглядно представить вас.</p>
+                <p class="text">Использование профессиональной фотографии может улучшить ваше резюме, сделав его более личным и запоминающимся. Однако важно убедиться, что фотография соответствует профессиональным стандартам, чтобы создать положительное первое впечатление.</p>
+                <p>Больше советов и примеров фотографий можно найти по ссылке. Также напоминаем, что фотографию на резюме можно сделать во время ближайшего Дня карьеры.</p>
             </div>
         </div>
         <div class="ltl_block">
