@@ -460,13 +460,18 @@ option {
     margin: 20px 0px;
 }
 
-div:empty {
+.cards_wrapper:empty {
     display: none
 }
 
 ::selection {
     background: var(--color-accent_3);
     color: var(--color-accent_6);
+}
+
+.dragging {
+    opacity: 0.6;
+    border-color: var(--color-accent_3);
 }
 
 
@@ -570,16 +575,19 @@ div:empty {
     }
 
     .blocking_heading {
+        padding: 0px;
+    }
+
+    .h1 {
         padding: 50px 35px 0;
     }
 
     .menu {
         overflow-x: auto;
-        overflow-y: hidden;
-        margin-right: -35px;
-        margin-left: -35px;
         white-space: nowrap;
         scrollbar-width: none;
+        width: 100%;
+        padding: 0px 35px;
     }
 
     .pos1 {

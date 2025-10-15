@@ -1,3 +1,5 @@
+import './menu_activeBtn.js'
+
 document.addEventListener('DOMContentLoaded', function () {
 
     const nameEl = document.getElementById('name');
