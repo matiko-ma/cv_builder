@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор резюме</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/cv_4.js" type="module"></script>
+</head>
+<body>
+    <section class="blue">
+        <header class="blocking_heading">
+            <h1 class="h1 white">Конструктор резюме</h1>
+            <nav class="menu">
+                <a class="menu_btn input_head" href="cv_1.html">Фото</a>
+                <a class="menu_btn input_head" href="cv_2.html">О себе</a>
+                <a class="menu_btn input_head" href="cv_3.html">Образование</a>
+                <a class="menu_btn input_head active" href="cv_4.html">Опыт</a>
+                <a class="menu_btn input_head" href="cv_5.html">Дополнительно</a>
+            </nav>
+        </header>
+    </section>
+    <section class="blocking main">
+        <div class="ltl_block">
+            <div class="ltl_block">
+                <h2 class="h2">Профессиональный опыт</h2>
+                <p>В этом разделе укажите свой профессиональный опыт в обратном хронологическом порядке, начиная с самого последнего опыта. Если у вас нет официального опыта работы, укажите соответствующую волонтерскую работу как часть вашего профессионального опыта. И если у вас большой опыт работы, сосредоточьтесь на выделении ролей, наиболее подходящих для должности, на которую вы претендуете.</p>
+            </div>
+        </div>
+        <div class="cards_wrapper" id="exp">
+            <div class="card">
+                <div class="card_text">
+                    <p class="card_body">Стажер маркетолог</p>
+                    <p class="input_years">11.2022 — 04.2023</p>
+                </div>
+                <svg class="delete_svg" viewBox="0 0 20 19" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.5 0.125C12.2432 0.125 12.8584 0.66571 12.9775 1.375H18.5C19.3284 1.375 20 2.04657 20 2.875C20 3.70343 19.3284 4.375 18.5 4.375H17.8994L17.0605 16.5469C16.9701 17.8577 15.8804 18.875 14.5664 18.875H5.43359C4.11964 18.875 3.02986 17.8577 2.93945 16.5469L2.10059 4.375H1.5C0.671573 4.375 0 3.70343 0 2.875C0 2.04657 0.671573 1.375 1.5 1.375H7.02246C7.1416 0.66571 7.75685 0.125 8.5 0.125H11.5ZM5.90039 15.875H14.0996L14.8936 4.375H5.10645L5.90039 15.875Z"/>
+                </svg>
+                <svg class="drag_svg" viewBox="0 0 22 15" width="22" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.5713 12C20.3997 12.0001 21.0713 12.6716 21.0713 13.5C21.0713 14.3284 20.3997 14.9999 19.5713 15H2.42871C1.60028 15 0.928711 14.3284 0.928711 13.5C0.928711 12.6716 1.60028 12 2.42871 12H19.5713ZM19.5713 6C20.3997 6.00008 21.0713 6.67162 21.0713 7.5C21.0713 8.32838 20.3997 8.99992 19.5713 9H2.42871C1.60028 9 0.928711 8.32843 0.928711 7.5C0.928711 6.67157 1.60028 6 2.42871 6H19.5713ZM19.5713 0C20.3997 7.53728e-05 21.0713 0.671619 21.0713 1.5C21.0713 2.32838 20.3997 2.99992 19.5713 3H2.42871C1.60028 3 0.928711 2.32843 0.928711 1.5C0.928711 0.671573 1.60028 0 2.42871 0H19.5713Z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="ltl_block">
+            <div class="input_line exp1">
+                <div class="input_block">
+                    <label for="exp_pos" class="input_head">Должность</label>
+                    <input class="input" id="exp_pos" placeholder="PR-менеджер">
+                </div>
+                <div class="input_block">
+                    <label for="exp_org" class="input_head">Организация</label>
+                    <input class="input" id="exp_org" placeholder="Ozon">
+                </div>
+            </div>
+            <div class="input_line exp2">
+                <div class="input_block">
+                    <label for="exp_start" class="input_head">Начало работы</label>
+                    <input type="month" class="input" id="exp_start" placeholder="мм.гггг">
+                </div>
+                <div class="input_block">
+                    <div class="work_current">
+                        <label for="exp_end" class="input_head">Окончание работы</label>
+                        <div class="work_current_checkbox">
+                            <input type="checkbox" id="w_cur">
+                            <label for="w_cur">Работаю сейчас</label>
+                        </div>
+                    </div>
+                    <input type="month" class="input" id="exp_end" placeholder="мм.гггг">
+                </div>
+            </div>
+            <div class="input_line exp3">
+                <div class="input_block">
+                    <label for="exp_resp" class="input_head">Обязанности и достижения</label>
+                    <textarea class="input" id="exp_resp" placeholder="Что делали? Какие были достижения?"></textarea>
+                </div>
+            </div>
+            <input class="btn_add" type="submit" value="Добавить">
+        </div>
+        <div class="ltl_block">
+            <form class="center" action="cv_5.html">
+                <input class="btn_next h3" type="submit" value="Следующий шаг">
+            </form>
+            <a class="go_back h3" href="cv_3.html">Назад</a>
+        </div>
+    </section>
+</body>
+</html>

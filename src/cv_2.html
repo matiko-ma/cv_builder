@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор резюме</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/cv_2.js" type="module"></script>
+</head>
+<body>
+    <section class="blue">
+        <header class="blocking_heading">
+            <h1 class="h1 white">Конструктор резюме</h1>
+            <nav class="menu">
+                <a class="menu_btn input_head" href="cv_1.html">Фото</a>
+                <a class="menu_btn input_head active" href="cv_2.html">О себе</a>
+                <a class="menu_btn input_head" href="cv_3.html">Образование</a>
+                <a class="menu_btn input_head" href="cv_4.html">Опыт</a>
+                <a class="menu_btn input_head" href="cv_5.html">Дополнительно</a>
+            </nav>
+        </header>
+    </section>
+    <section class="blocking main">
+        <div class="ltl_block">
+            <div class="ltl_block">
+                <h2 class="h2">Персональные данные</h2>
+                <p>Укажите потенциальным работодателям актуальные контактные данные. Это будет вашим первым шагом к взаимодействию с менеджером по найму, поэтому крайне важно, чтобы информация была точной и актуальной.</p>
+            </div>
+            <div class="input_line about1">
+                <div class="input_block">
+                    <label for="name" class="input_head">Имя</label>
+                    <input class="input" id="name" placeholder="Константин">
+                </div>
+                <div class="input_block">
+                    <label for="name" class="input_head">Фамилия</label>
+                    <input class="input" id="surname" placeholder="Константинович">
+                </div>
+            </div>
+            <div class="input_line about2">
+                <div class="input_block">
+                    <label for="email" class="input_head">E-mail</label>
+                    <input type="email" class="input" id="email" placeholder="example@example.com">
+                </div>
+                <div class="input_block">
+                    <label for="phone" class="input_head">Телефон</label>
+                    <input type="tel" class="input" id="phone" placeholder="+7(999)999-99-99">
+                </div>
+            </div>
+            <div class="input_line">
+                <div class="input_block">
+                    <label for="about" class="input_head">О себе</label>
+                    <textarea class="input" id="about" placeholder="Краткое представление"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="ltl_block">
+            <form class="center" action="cv_3.html">
+                <input class="btn_next h3" type="submit" value="Следующий шаг">
+            </form>
+            <a class="go_back h3" href="cv_1.html">Назад</a>
+        </div>
+    </section>
+</body>
+</html>
