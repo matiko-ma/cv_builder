@@ -3,26 +3,33 @@ import CardList from './CardList.js'
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    const form = document.getElementById('ed_form');
     const cardList = new CardList();
 
-    const edAddBtnEl = document.getElementsByClassName('btn_add')[0];
-    edAddBtnEl.addEventListener('click', () => {
-        const cardBody = document.getElementById('ed_lvl').value;
-        const edStart = document.getElementById('ed_start').value;
-        const edEnd = document.getElementById('ed_end').value;
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-        const formatMonthYear = (dateStr) => {
-        const [year, month] = dateStr.split('-');
-        return `${month}.${year}`;
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        const formData = new FormData(form)
+        const data = Object.fromEntries(formData.entries());
+
+        cardList.parseCard(data, 'ed_card', 'ed_form');
+        cardList.saveToStorage();
+
+        form.reset();
+    });
+
+    const btnNext = document.getElementById('btn_next');
+    btnNext.addEventListener('click', (e) => {
+        const savedData = sessionStorage.getItem('cardsData');
+        const data = JSON.parse(savedData) || [];
+        if (!data['ed_card'] || data['ed_card'].length === 0) {
+            e.preventDefault();
+            alert("Добавьте хотя бы один уровень образования!")
         };
-        const  cardSmallText = `${formatMonthYear(edStart)} — ${formatMonthYear(edEnd)}`;
-
-        const extraData = {
-            uni: document.getElementById('ed_uni').value,
-            fcl: document.getElementById('ed_fcl').value,
-            major: document.getElementById('ed_major').value
-        };
-
-        cardList.parseCard(cardBody, cardSmallText, 'ed', extraData);
     });
 });

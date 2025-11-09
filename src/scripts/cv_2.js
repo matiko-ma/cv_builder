@@ -1,34 +1,24 @@
 import './menu_activeBtn.js'
 
 document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('about_form');
+    const inputs = form.querySelectorAll('input, textarea, select');
 
-    const nameEl = document.getElementById('name');
-    nameEl.addEventListener('change', () => {
-        sessionStorage.setItem('name', nameEl.value);
-        console.log(sessionStorage.getItem('name'));
-    });
-    
-    const surnameEl = document.getElementById('surname');
-    surnameEl.addEventListener('change', () => {
-        sessionStorage.setItem('surname', surnameEl.value);
-        console.log(sessionStorage.getItem('surname'));
-    });
+    inputs.forEach(input => {
+        const storedValue = sessionStorage.getItem(input.name);
+        if (storedValue) {
+            input.value = storedValue;
+        }
 
-    const emailEl = document.getElementById('email');
-    emailEl.addEventListener('change', () => {
-        sessionStorage.setItem('email', emailEl.value);
-        console.log(sessionStorage.getItem('email'));
+        input.addEventListener('input', () => {
+            sessionStorage.setItem(input.name, input.value);
+        });
     });
 
-    const phoneEl = document.getElementById('phone');
-    phoneEl.addEventListener('change', () => {
-        sessionStorage.setItem('phone', phoneEl.value);
-        console.log(sessionStorage.getItem('phone'));
-    });
-
-    const aboutEl = document.getElementById('about');
-    aboutEl.addEventListener('change', () => {
-        sessionStorage.setItem('about', aboutEl.value);
-        console.log(sessionStorage.getItem('about'));
-    });
+    form.addEventListener('submit', () => {
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+    })
 });

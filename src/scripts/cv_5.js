@@ -5,17 +5,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const cardList = new CardList();
 
-    const addCardHandler = (btnId, inputId, levelId, wrapperId) => {
-        const btn = document.getElementById(btnId);
-        btn.addEventListener('click', () => {
-            const cardBody = document.getElementById(inputId).value;
-            const cardSmallText = document.getElementById(levelId).value;
+    const addCard = (formID, wrapperId) => {
+        const form = document.getElementById(formID);
 
-            cardList.parseCard(cardBody, cardSmallText, wrapperId);
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const formData = new FormData(form)
+            const data = Object.fromEntries(formData.entries());
+
+            cardList.parseCard(data, wrapperId, formID);
+            cardList.saveToStorage();
+
+            form.reset();
         });
     };
 
-    addCardHandler('add_lang', 'adt_lng_name', 'adt_lvl_lang', 'lang');
-    addCardHandler('add_hard', 'adt_hard_name', 'adt_lvl_hard', 'hard_skills');
-    addCardHandler('add_soft', 'adt_soft_name', 'adt_lvl_soft', 'soft_skills');
+    addCard('adt1_form', 'lang');
+    addCard('adt2_form', 'hard_skills');
+    addCard('adt3_form', 'soft_skills');
+
+    const btnCreate = document.getElementById('btn_create');
+    btnCreate.addEventListener('click', (e) => {
+        const savedData = sessionStorage.getItem(cardList.storageKey);
+        if (!savedData) {
+            e.preventDefault();
+            alert("Недостаточно информации для генерации резюме!")
+        };
+    });
 });

@@ -201,7 +201,6 @@ nav {
 .go_back {
     color: var(--color-accent_1);
     text-decoration: none;
-    align-self: center;
 }
 
 .work_current {
@@ -234,6 +233,8 @@ nav {
     border: 2px solid var(--color-accent_3);
     padding: 20px 40px;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn_create:hover {
@@ -268,6 +269,8 @@ nav {
     width: fit-content;
     padding: 10px 25px;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn_next:hover {
@@ -290,6 +293,10 @@ nav {
 .input:focus {
     border-color: var(--color-accent_2);
     outline: none;
+}
+
+.input:invalid:user-invalid {
+    border-color: var(--color-accent_4);
 }
 
 input::placeholder,
@@ -371,6 +378,12 @@ input#photo_input {
 }
 
 /* Иконки на карточке */
+.svg_btn {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
 .delete_svg {
     fill: var(--color-main);
     cursor: pointer;
@@ -444,8 +457,12 @@ option {
     margin-bottom: 15px;
 }
 
-.center {
+.text-center {
     text-align: center;
+}
+
+.item-center {
+    align-items: center;
 }
 
 .blue {
@@ -496,14 +513,7 @@ option {
         padding: 50px 65px 0;
     }
 
-    .ed1,
-    .ed3 {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .exp1,
-    .exp2 {
+    .tablet {
         flex-direction: column;
         gap: 10px;
     }
@@ -599,13 +609,7 @@ option {
         padding: 8px 10px;
     }
 
-    .photo_block,
-    .about1,
-    .about2,
-    .ed2,
-    .adt1,
-    .adt2,
-    .adt3 {
+    .phone {
         display: flex;
         flex-direction: column;
         gap: 10px;
