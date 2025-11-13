@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.style.width = '150px';
         img.style.height = '150px';
         img.style.borderRadius = '50%';
+        img.style.objectFit = 'cover';
         container.appendChild(img);
     }
 

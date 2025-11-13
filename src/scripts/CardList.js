@@ -269,7 +269,12 @@ export default class CardList {
         container.querySelectorAll('select').forEach(select => {
             if (action === 'init') {
                 if (select.dataset.choicesInitialized === 'true') return;
-                select.choices = new Choices(select, { searchEnabled: false, itemSelectText: '' });
+                select.choices = new Choices(select, {
+                    searchEnabled: false,
+                    itemSelectText: '',
+                    shouldSort: false,
+                    sorter: (a, b) => 0
+                });
                 select.dataset.choicesInitialized = 'true';
             } else if (action === 'destroy' && select.choices) {
                 select.choices.destroy();

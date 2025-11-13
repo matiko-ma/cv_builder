@@ -464,6 +464,13 @@ input[type="checkbox"]:checked::after {
     text-align: center;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--color-main);
+}
+
 /* Drop-down list */
 .input_lvl {
     display: flex;
