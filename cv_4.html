@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang=ru><script type=module src=cv_3.d5ab14ae.js></script><link rel=stylesheet href=cv_4.17ee909d.css><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Конструктор резюме</title><link rel=stylesheet href=cv_builder.a0862ae4.css><link rel=stylesheet href=cv_builder.bb090f21.css><script src=cv_4.ed0e8b2e.js type=module></script><body>
+    <section class=blue>
+        <header class=blocking_heading>
+            <h1 class="h1 white">Конструктор резюме</h1>
+            <nav class=menu>
+                <a class="input_head menu_btn" href=cv_1.html>Фото</a>
+                <a class="input_head menu_btn" href=cv_2.html>О себе</a>
+                <a class="input_head menu_btn" href=cv_3.html>Образование</a>
+                <a class="active input_head menu_btn" href=cv_4.html>Опыт</a>
+                <a class="input_head menu_btn" href=cv_5.html>Дополнительно</a>
+            </nav>
+        </header>
+    </section>
+    <section class="blocking main">
+        <div class=ltl_block>
+            <div class=ltl_block>
+                <h2 class=h2>Профессиональный опыт</h2>
+                <p>В этом разделе укажите свой профессиональный опыт в обратном хронологическом порядке, начиная с
+                    самого последнего опыта. Если у вас нет официального опыта работы, укажите соответствующую
+                    волонтерскую работу как часть вашего профессионального опыта. И если у вас большой опыт работы,
+                    сосредоточьтесь на выделении ролей, наиболее подходящих для должности, на которую вы претендуете.
+                </p>
+            </div>
+        </div>
+        <div class=cards_wrapper id=exp_card></div>
+        <form class=ltl_block id=exp_form>
+            <div class="input_line tablet">
+                <div class=input_block>
+                    <label for=exp_pos class=input_head>Должность</label>
+                    <input class=input id=exp_pos name=exp_pos placeholder=PR-менеджер required>
+                </div>
+                <div class=input_block>
+                    <label for=exp_org class=input_head>Организация</label>
+                    <input class=input id=exp_org name=exp_org placeholder=Ozon required>
+                </div>
+            </div>
+            <div class="input_line tablet">
+                <div class=input_block>
+                    <label for=exp_start class=input_head>Начало работы</label>
+                    <input type=month class=input id=exp_start name=exp_start placeholder=мм.гггг pattern=^(0[1-9]|1[0-2])\.(19|20)\d{2}$ title="Введите дату в формате мм.гггг" required>
+                </div>
+                <div class=input_block>
+                    <div class=work_current>
+                        <label for=exp_end class=input_head>Окончание работы</label>
+                        <div class=work_current_checkbox>
+                            <input type=checkbox id=w_cur name=w_cur>
+                            <label for=w_cur>Работаю сейчас</label>
+                        </div>
+                    </div>
+                    <input type=month class=input id=exp_end name=exp_end placeholder=мм.гггг pattern=^(0[1-9]|1[0-2])\.(19|20)\d{2}$ title="Введите дату в формате мм.гггг" required>
+                </div>
+            </div>
+            <div class=input_line>
+                <div class=input_block>
+                    <label for=exp_resp class=input_head>Обязанности и достижения</label>
+                    <textarea class=input id=exp_resp name=exp_resp placeholder="Что делали? Какие были достижения?"></textarea>
+                </div>
+            </div>
+            <input class=btn_add type=submit value=Добавить>
+        </form>
+        <div class=alert></div>
+        <div class="item-center ltl_block">
+            <a class="btn_next h3" href=cv_5.html id=btn_next>Следующий шаг</a>
+            <a class="go_back h3" href=cv_3.html>Назад</a>
+        </div>
+    </section>
+
+

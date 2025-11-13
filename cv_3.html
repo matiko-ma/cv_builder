@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang=ru><script type=module src=cv_3.d5ab14ae.js></script><link rel=stylesheet href=cv_3.b0c12481.css><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Конструктор резюме</title><link rel=stylesheet href=cv_builder.a0862ae4.css><link rel=stylesheet href=cv_builder.bb090f21.css><script src=cv_3.5f3a1bcf.js type=module></script><body>
+    <section class=blue>
+        <header class=blocking_heading>
+            <h1 class="h1 white">Конструктор резюме</h1>
+            <nav class=menu>
+                <a class="input_head menu_btn" href=cv_1.html>Фото</a>
+                <a class="input_head menu_btn" href=cv_2.html>О себе</a>
+                <a class="active input_head menu_btn" href=cv_3.html>Образование</a>
+                <a class="input_head menu_btn" href=cv_4.html>Опыт</a>
+                <a class="input_head menu_btn" href=cv_5.html>Дополнительно</a>
+            </nav>
+        </header>
+    </section>
+    <section class="blocking main">
+        <div class=ltl_block>
+            <div class=ltl_block>
+                <h2 class=h2>Образование</h2>
+                <p>В этом разделе укажите свое академическое образование в обратном хронологическом порядке, начиная с
+                    самого последнего академического опыта.</p>
+            </div>
+        </div>
+        <div class=cards_wrapper id=ed_card></div>
+        <form class=ltl_block id=ed_form>
+            <div class="input_line tablet">
+                <div class=input_block>
+                    <label for=ed_lvl class=input_head>Уровень образования</label>
+                    <input class=input id=ed_lvl name=ed_lvl placeholder=Магистратура required>
+                </div>
+                <div class=input_block>
+                    <label for=ed_uni class=input_head>Учебное заведение</label>
+                    <input class=input id=ed_uni name=ed_uni placeholder="Высшая Школа Экономики" required>
+                </div>
+            </div>
+            <div class="input_line phone">
+                <div class=input_block>
+                    <label for=ed_start class=input_head>Начало обучения</label>
+                    <input type=month class=input id=ed_start name=ed_start placeholder=гггг-мм pattern=^(19|20)\d{2}-(0[1-9]|1[0-2])$ title="Введите дату в формате гггг-мм" required>
+                </div>
+                <div class=input_block>
+                    <label for=ed_end class=input_head>Окончание обучения</label>
+                    <input type=month class=input id=ed_end name=ed_end placeholder=гггг-мм pattern=^(19|20)\d{2}-(0[1-9]|1[0-2])$ title="Введите дату в формате гггг-мм" required>
+                </div>
+            </div>
+            <div class="input_line tablet">
+                <div class=input_block>
+                    <label for=ed_fcl class=input_head>Факультет</label>
+                    <input class=input id=ed_fcl name=ed_fcl placeholder="Школа экономики и менеджмента" required>
+                </div>
+                <div class=input_block>
+                    <label for=ed_major class=input_head>Специалиация</label>
+                    <input class=input id=ed_major name=ed_major placeholder=Менеджмент required>
+                </div>
+            </div>
+            <input class=btn_add type=submit value=Добавить>
+        </form>
+        <div class=alert></div>
+        <div class="item-center ltl_block">
+            <a class="btn_next h3" href=cv_4.html id=btn_next>Следующий шаг</a>
+            <a class="go_back h3" href=cv_2.html>Назад</a>
+        </div>
+    </section>
+
+

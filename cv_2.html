@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang=ru><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Конструктор резюме</title><link rel=stylesheet href=cv_builder.a0862ae4.css><link rel=stylesheet href=cv_builder.bb090f21.css><script src=cv_2.80601408.js type=module></script><body>
+    <section class=blue>
+        <header class=blocking_heading>
+            <h1 class="h1 white">Конструктор резюме</h1>
+            <nav class=menu>
+                <a class="input_head menu_btn" href=cv_1.html>Фото</a>
+                <a class="active input_head menu_btn" href=cv_2.html>О себе</a>
+                <a class="input_head menu_btn" href=cv_3.html>Образование</a>
+                <a class="input_head menu_btn" href=cv_4.html>Опыт</a>
+                <a class="input_head menu_btn" href=cv_5.html>Дополнительно</a>
+            </nav>
+        </header>
+    </section>
+    <section class=blocking>
+        <form class=main action=cv_3.html id=about_form>
+            <div class=ltl_block>
+                <div class=ltl_block>
+                    <h2 class=h2>Персональные данные</h2>
+                    <p>Укажите потенциальным работодателям актуальные контактные данные. Это будет вашим первым шагом к
+                        взаимодействию с менеджером по найму, поэтому крайне важно, чтобы информация была точной и
+                        актуальной.</p>
+                </div>
+                <div class="input_line phone">
+                    <div class=input_block>
+                        <label for=name class=input_head>Имя</label>
+                        <input class=input id=name name=name placeholder=Константин required>
+                    </div>
+                    <div class=input_block>
+                        <label for=surname class=input_head>Фамилия</label>
+                        <input class=input id=surname name=surname placeholder=Константинович required>
+                    </div>
+                </div>
+                <div class="input_line phone">
+                    <div class=input_block>
+                        <label for=email class=input_head>E-mail</label>
+                        <input type=email class=input id=email name=email placeholder=example@example.com required>
+                    </div>
+                    <div class=input_block>
+                        <label for=phone class=input_head>Телефон</label>
+                        <input type=tel class=input id=phone name=phone placeholder=+7(999)999-99-99 pattern=^\+?[0-9\s\-\(\)]{7,20}$ title="Минимум 7 цифр, можно использовать +, пробелы, скобки и дефисы." required>
+                    </div>
+                </div>
+                <div class=input_line>
+                    <div class=input_block>
+                        <label for=about_text class=input_head>О себе</label>
+                        <textarea class=input id=about_text name=about_text placeholder="Краткое представление"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="item-center ltl_block">
+                <input class="btn_next h3" type=submit value="Следующий шаг">
+                <a class="go_back h3" href=cv_1.html>Назад</a>
+            </div>
+        </form>
+    </section>
+
+
