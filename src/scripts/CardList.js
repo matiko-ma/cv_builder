@@ -1,3 +1,6 @@
+import Choices from 'choices.js';
+import 'choices.js/public/assets/styles/choices.min.css';
+
 export default class CardList {
     constructor() {
         this.wrappers = document.querySelectorAll('.cards_wrapper');
@@ -5,21 +8,29 @@ export default class CardList {
         this.storageKey = 'cardsData';
         this.init();
         this.loadFromStorage();
+        this.manageSelects(document, 'init');
     }
 
     init() {
         document.addEventListener('click', (e) => {
             if (e.target.closest('.delete_svg')) {
                 this.closeForm();
+
                 const card = e.target.closest('.card');
-                if (card) {
+                if (!card) return;
+
+                const editWrapper = card.closest('.edit_div');
+                if (editWrapper) {
+                    editWrapper.remove();
+                } else {
                     const wrapper = card.parentElement;
                     card.remove();
                     if (!wrapper.querySelector('.card')) {
                         wrapper.style.display = 'none';
                     }
-                    this.saveToStorage();
                 }
+
+                this.saveToStorage();
             }
         });
 
@@ -65,7 +76,7 @@ export default class CardList {
         });
     }
 
-    parseCard(cardData, wrapperId, formId, fromStorage = false) {
+    parseCard(cardData, wrapperId, formId) {
         if (!cardData || Object.keys(cardData).length === 0) return;
 
         const wrapper = document.getElementById(wrapperId);
@@ -106,18 +117,33 @@ export default class CardList {
     }
 
     openEditForm(card, formId) {
-        const existingForm = card.nextElementSibling;
-        if (existingForm?.classList.contains('edit_form')) {
-            existingForm.remove();
+        const existingWrapper = card.closest('.edit_div');
+
+        if (existingWrapper) {
+            const existingForm = existingWrapper.querySelector('.edit_form');
+            if (existingForm) this.manageSelects(existingForm, 'destroy');
+            existingForm?.remove();
+
+            existingWrapper.parentElement.insertBefore(card, existingWrapper);
+            existingWrapper.remove();
+            card.classList.remove('edit_card');
             return;
         }
 
         const templateForm = document.getElementById(formId);
+        this.manageSelects(templateForm, 'destroy');
+
         const formClone = templateForm.cloneNode(true);
+        this.manageSelects(templateForm, 'init');
         formClone.classList.add('edit_form');
         formClone.removeAttribute('id');
+        card.classList.add('edit_card');
 
-        this.checkExpNow(formClone);
+        const btn = formClone.querySelector('.btn_add');
+        if (btn) {
+            btn.classList.replace('btn_add', 'btn_save');
+            btn.value = 'Сохранить';
+        }
 
         const inputs = formClone.querySelectorAll('input, textarea, select');
         inputs.forEach(input => {
@@ -129,7 +155,17 @@ export default class CardList {
             }
         });
 
-        card.insertAdjacentElement('afterend', formClone);
+        this.checkExpNow(formClone);
+
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('edit_div');
+
+        card.parentElement.insertBefore(wrapper, card);
+        wrapper.appendChild(card);
+        wrapper.appendChild(formClone);
+        card.classList.add('edit_card');
+
+        this.manageSelects(formClone, 'init');
 
         formClone.addEventListener('submit', e => {
             e.preventDefault();
@@ -147,7 +183,14 @@ export default class CardList {
             card.querySelector('.card_body').textContent = cardBody;
             card.querySelector('.input_years').textContent = cardSmallText;
 
+            this.manageSelects(formClone, 'destroy');
             formClone.remove();
+            const editWrapper = card.closest('.edit_div');
+            if (editWrapper) {
+                editWrapper.parentElement.insertBefore(card, editWrapper);
+                editWrapper.remove();
+            }
+            card.classList.remove('edit_card');
 
             this.saveToStorage();
         });
@@ -191,6 +234,8 @@ export default class CardList {
                 return [cardData.adt_hard_name, cardData.adt_lvl_hard];
             } else if (formId === "adt3_form") {
                 return [cardData.adt_soft_name, cardData.adt_lvl_soft];
+            } else {
+                return [cardData.adt_journal, cardData.adt_year]
             };
         };
     };
@@ -205,7 +250,7 @@ export default class CardList {
         const checkbox = form.w_cur;
         const endInput = form.exp_end;
         if (checkbox && endInput) {
-            checkbox.addEventListener('change', () => {
+            const toggle = () => {
                 if (checkbox.checked) {
                     endInput.disabled = true;
                     endInput.value = '';
@@ -214,13 +259,32 @@ export default class CardList {
                     endInput.disabled = false;
                     endInput.required = true;
                 }
-            });
+            };
+            checkbox.addEventListener('change', toggle);
+            toggle();
         }
     };
 
-    closeForm() {
-        document.querySelectorAll('.edit_form').forEach(form => form.remove());
+    manageSelects(container = document, action = 'init') {
+        container.querySelectorAll('select').forEach(select => {
+            if (action === 'init') {
+                if (select.dataset.choicesInitialized === 'true') return;
+                select.choices = new Choices(select, { searchEnabled: false, itemSelectText: '' });
+                select.dataset.choicesInitialized = 'true';
+            } else if (action === 'destroy' && select.choices) {
+                select.choices.destroy();
+                delete select.choices;
+                delete select.dataset.choicesInitialized;
+            }
+        });
     };
+
+    closeForm() {
+        document.querySelectorAll('.edit_form').forEach(form => {
+            this.manageSelects(form, 'destroy');
+            form.remove();
+        });
+    }
 
     saveToStorage() {
         const data = JSON.parse(sessionStorage.getItem(this.storageKey)) || {};

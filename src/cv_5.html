@@ -44,7 +44,7 @@
                             <div class="input_lvl">
                                 <label for="adt_lvl_lang" class="input_head">Уровень</label>
                                 <select class="input" id="adt_lvl_lang" name="adt_lvl_lang" required>
-                                    <option>Выберете уровень</option>
+                                    <option value="">Выберете уровень</option>
                                     <option>Начальный</option>
                                     <option>Средний</option>
                                     <option>Продвинутый</option>
@@ -73,7 +73,7 @@
                             <div class="input_lvl">
                                 <label for="adt_lvl_hard" class="input_head">Уровень</label>
                                 <select class="input" id="adt_lvl_hard" name="adt_lvl_hard" required>
-                                    <option>Выберете уровень</option>
+                                    <option value="">Выберете уровень</option>
                                     <option>Начальный</option>
                                     <option>Средний</option>
                                     <option>Продвинутый</option>
@@ -101,7 +101,7 @@
                             <div class="input_lvl">
                                 <label for="adt_lvl_soft" class="input_head">Уровень</label>
                                 <select class="input" id="adt_lvl_soft" name="adt_lvl_soft" required>
-                                    <option>Выберете уровень</option>
+                                    <option value="">Выберете уровень</option>
                                     <option>Начальный</option>
                                     <option>Средний</option>
                                     <option>Продвинутый</option>
@@ -120,10 +120,30 @@
                             обратном хронологическом порядке, начиная с самой последней</p>
                     </div>
                     <div class="cards_wrapper adt_cards" id="articles" name="articles"></div>
-                    <input class="btn_add" type="submit" value="Добавить" id="add_articles">
+                    <form class="ltl_block" id="adt4_form">
+                        <div class="input_line tablet">
+                            <div class="input_block">
+                                <label for="adt_journal" class="input_head">Журнал</label>
+                                <input class="input" id="adt_journal" name="adt_journal"
+                                    placeholder="Организационная психология" required>
+                            </div>
+                            <div class="input_block">
+                                <label for="adt_year" class="input_head">Год публикации</label>
+                                <input type="number" min="1950" max="2050" step="1" placeholder="2025" class="input"
+                                    id="adt_year" name="adt_year" title="Введите год от 1950 до 2050" required>
+                            </div>
+                        </div>
+                        <div class="input_block">
+                                <label for="adt_ref" class="input_head">Ссылка</label>
+                                <textarea class="input" id="adt_ref" name="adt_ref"
+                            placeholder="Полная академическая ссылка" required></textarea>
+                            </div>
+                        <input class="btn_add" type="submit" value="Добавить" id="add_articles">
+                    </form>
                 </div>
             </div>
         </div>
+        <div class="alert"></div>
         <div class="ltl_block item-center">
             <a class="btn_create h2" href="done.html" id="btn_create">Генерировать</a>
             <a class="go_back h3" href="cv_4.html">Назад</a>

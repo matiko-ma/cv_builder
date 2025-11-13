@@ -52,11 +52,13 @@
 /* Глобальные переменные. Цвета подобраны по брендбуку Вышки */
 :root {
     --color-main: #0F2D69;
+    --color-main-50: #8796B4;
     --color-accent_1: #CDDCF0;
     --color-accent_2: #0FA0D7;
     --color-accent_3: #EB691E;
     --color-accent_4: #E61E3C;
     --color-accent_5: #009B64;
+    --color-accent_5-20: #CCEBE0;
     --color-accent_6: #FFFFFF;
 
     --typography-font: "HSE Sans", sans-serif;
@@ -295,8 +297,18 @@ nav {
     outline: none;
 }
 
-.input:invalid:user-invalid {
+.input:user-invalid {
     border-color: var(--color-accent_4);
+}
+
+.input:user-invalid::placeholder {
+    color: var(--color-accent_4);
+}
+
+.input:disabled {
+    border-color: var(--color-main-50);
+    color: var(--color-main-50);
+    background-color: var(--color-accent_1);
 }
 
 input::placeholder,
@@ -356,6 +368,25 @@ input#photo_input {
 
 .btn_add:hover {
     color: var(--color-main);
+    background-color: var(--color-accent_6);
+}
+
+/* Кнопка сохранения карточки */
+.btn_save {
+    font-weight: bold;
+    color: var(--color-accent_6);
+    background-color: var(--color-accent_5);
+    border-radius: 5px;
+    border: 2px solid var(--color-accent_5);
+    padding: 10px 20px;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.btn_save:hover {
+    color: var(--color-accent_5);
     background-color: var(--color-accent_6);
 }
 
@@ -434,14 +465,6 @@ input[type="checkbox"]:checked::after {
 }
 
 /* Drop-down list */
-select,
-option {
-    font-family: var(--typography-font);
-    font-weight: var(--typography-weight-regular);
-    color: var(--color-main);
-    font-size: 20px;
-}
-
 .input_lvl {
     display: flex;
     flex-direction: column;
@@ -449,6 +472,121 @@ option {
     min-width: 300px;
 }
 
+.choices__inner {
+    border: 1px solid var(--color-main);
+    border-radius: 5px;
+    padding: 10px 15px 10px;
+    background-color: var(--color-accent_6);
+    font: var(--typography-weight-regular) 20px var(--typography-font);
+    color: var(--color-main);
+}
+
+.choices__inner:hover,
+.is-open .choices__inner,
+.is-focused .choices__inner {
+    border-color: var(--color-accent_2);
+}
+
+.is-open .choices__inner {
+    border-radius: 5px 5px 0 0;
+}
+
+.is-open .choices__list--dropdown,
+.is-open .choices__list[aria-expanded] {
+    border: 1px solid var(--color-accent_2);
+    border-radius: 0 0 5px 5px;
+}
+
+.choices__list--dropdown .choices__item,
+.choices__list[aria-expanded] .choices__item {
+    font: var(--typography-weight-regular) 20px var(--typography-font);
+    padding: 5px 15px;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background-color: var(--color-accent_2);
+    color: var(--color-accent_6);
+}
+
+.choices__list--single {
+    padding: 0;
+}
+
+.choices__placeholder {
+    opacity: 1;
+}
+
+.choices[data-type*="select-one"] .choices__inner {
+    padding-bottom: 10px;
+}
+
+.choices[data-type*="select-one"]:after {
+    border: 0;
+}
+
+.choices__inner::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid var(--color-main);
+    border-bottom: 2px solid var(--color-main);
+    transform: translateY(-50%) rotate(-45deg);
+    transition: transform 0.25s ease;
+}
+
+.choices.is-open .choices__inner::after {
+    transform: translateY(-50%) rotate(135deg);
+}
+
+/* Карточка в режиме редактирования */
+.edit_card {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid var(--color-accent_5);
+    color: var(--color-accent_5);
+    background-color: var(--color-accent_5-20);
+}
+
+.edit_card svg {
+    fill: var(--color-accent_5);
+}
+
+.edit_div {
+    border-radius: 5px;
+    border: 1px solid var(--color-accent_5);
+}
+
+.edit_form {
+    padding: 20px;
+}
+
+/* Предупреждения */
+.alert {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    transform: translateX(0%);
+    background-color: var(--color-accent_4);
+    color: var(--color-accent_6);
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease, top 0.4s ease;
+    text-align: center;
+}
+
+.alert.show {
+    display: block;
+    opacity: 1;
+}
 
 
 
@@ -516,6 +654,14 @@ option {
     .tablet {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .alert {
+        right: 50%;
+        bottom: 20px;
+        transform: translateX(50%);
+        font-size: 16px;
+        white-space: nowrap;
     }
 }
 
@@ -646,7 +792,8 @@ option {
         gap: 3px;
     }
 
-    .btn_add {
+    .btn_add,
+    .btn_save {
         padding: 8px auto;
         width: 100%;
         font-size: 16px;
@@ -664,14 +811,27 @@ option {
         font-size: 10px;
     }
 
-    select,
-    option {
+    .choices__inner,
+    .choices__list--dropdown .choices__item,
+    .choices__list[aria-expanded] .choices__item {
         font-size: 16px;
     }
 
     .input_lvl {
         gap: 2px;
         min-width: fit-content;
+    }
+
+    .edit_form {
+        padding-top: 15px;
+    }
+
+    .alert {
+        right: 50%;
+        bottom: 20px;
+        transform: translateX(50%);
+        font-size: 14px;
+        padding: 15px;
     }
 }
 
@@ -687,5 +847,11 @@ option {
 
     .drag_svg {
         width: 19px;
+    }
+
+    .alert {
+        white-space: normal;
+        width: 70%;
+        padding: 10px;
     }
 }

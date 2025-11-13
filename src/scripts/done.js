@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const container = document.createElement('div');
     container.style.marginTop = '50px';
+    container.style.marginBottom = '50px';
     container.style.display = 'flex';
     container.style.flexDirection = 'column';
     container.style.justifySelf = 'center';
@@ -88,6 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSection('Soft Skills', cardsData.soft_skills, {
         adt_soft_name: 'Навык',
         adt_lvl_soft: 'Уровень'
+    });
+
+    renderSection('Публикации', cardsData.articles, {
+        adt_year: 'Год публикации',
+        adt_journal: 'Журнал',
+        adt_ref: 'Ссылка'
     });
 
     document.body.appendChild(container);

@@ -1,5 +1,6 @@
 import './menu_activeBtn.js'
 import CardList from './CardList.js'
+import { showAlert } from './showAlert.js'
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -27,9 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
     btnNext.addEventListener('click', (e) => {
         const savedData = sessionStorage.getItem('cardsData');
         const data = JSON.parse(savedData) || [];
+
         if (!data['ed_card'] || data['ed_card'].length === 0) {
             e.preventDefault();
-            alert("Добавьте хотя бы один уровень образования!")
+            showAlert("Добавьте хотя бы один уровень образования!")
         };
     });
 });

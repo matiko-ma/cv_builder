@@ -1,5 +1,6 @@
 import './menu_activeBtn.js'
 import CardList from './CardList.js'
+import { showAlert } from './showAlert.js'
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -28,10 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnNext = document.getElementById('btn_next');
     btnNext.addEventListener('click', (e) => {
         const savedData = sessionStorage.getItem('cardsData');
-        const data = JSON.parse(savedData) || [];
+        const data = JSON.parse(savedData) || {};
+
         if (!data['exp_card'] || data['exp_card'].length === 0) {
             e.preventDefault();
-            alert("Добавьте хотя бы один опыт!")
-        };
+            showAlert("Добавьте хотя бы один опыт!");
+        }
     });
+
 });
