@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор резюме</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/cv_5.js" type="module"></script>
+</head>
+
+<body>
+    <section class="blue">
+        <header class="blocking_heading">
+            <h1 class="h1 white">Конструктор резюме</h1>
+            <nav class="menu">
+                <a class="menu_btn input_head" href="cv_1.html">Фото</a>
+                <a class="menu_btn input_head" href="cv_2.html">О себе</a>
+                <a class="menu_btn input_head" href="cv_3.html">Образование</a>
+                <a class="menu_btn input_head" href="cv_4.html">Опыт</a>
+                <a class="menu_btn input_head active" href="cv_5.html">Дополнительно</a>
+            </nav>
+        </header>
+    </section>
+    <section class="blocking main">
+        <div class="ltl_block">
+            <h2 class="h2">Дополнительная информация</h2>
+            <div class="adt_block">
+                <div class="ltl_block">
+                    <div class="adt_text">
+                        <h3 class="h3">Языки</h3>
+                        <p>В этом разделе предоставьте четкий и честный обзор языков, которыми вы владеете, и ваш
+                            уровень владения каждым из них.</p>
+                    </div>
+                    <div class="cards_wrapper adt_cards" id="lang"></div>
+                    <form class="ltl_block" id="adt1_form">
+                        <div class="input_line phone">
+                            <div class="input_block">
+                                <label for="adt_lng_name" class="input_head">Язык</label>
+                                <input type="text" class="input" id="adt_lng_name" name="adt_lng_name" placeholder="Английский"
+                                    required>
+                            </div>
+                            <div class="input_lvl">
+                                <label for="adt_lvl_lang" class="input_head">Уровень</label>
+                                <select class="input" id="adt_lvl_lang" name="adt_lvl_lang" required>
+                                    <option value="">Выберете уровень</option>
+                                    <option>Начальный</option>
+                                    <option>Средний</option>
+                                    <option>Продвинутый</option>
+                                    <option>Экспертный</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn_add" value="Добавить" id="add_lang">
+                    </form>
+                </div>
+                <div class="ltl_block">
+                    <div class="adt_text">
+                        <h3 class="h3">Hard Skills</h3>
+                        <p>В этом разделе предоставьте четкий и правдивый обзор навыков работы с компьютером и
+                            информационными технологиями, которыми вы владеете, а также ваш уровень владения каждым из
+                            них.</p>
+                    </div>
+                    <div class="cards_wrapper adt_cards" id="hard_skills"></div>
+                    <form class="ltl_block" id="adt2_form">
+                        <div class="input_line phone">
+                            <div class="input_block">
+                                <label for="adt_hard_name" class="input_head">Навык</label>
+                                <input type="text" class="input" id="adt_hard_name" name="adt_hard_name" placeholder="Figma"
+                                    required>
+                            </div>
+                            <div class="input_lvl">
+                                <label for="adt_lvl_hard" class="input_head">Уровень</label>
+                                <select class="input" id="adt_lvl_hard" name="adt_lvl_hard" required>
+                                    <option value="">Выберете уровень</option>
+                                    <option>Начальный</option>
+                                    <option>Средний</option>
+                                    <option>Продвинутый</option>
+                                    <option>Экспертный</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn_add" value="Добавить" id="add_hard">
+                    </form>
+                </div>
+                <div class="ltl_block">
+                    <div class="adt_text">
+                        <h3 class="h3">Soft Skills</h3>
+                        <p>В этом разделе приведите четкий и честный обзор ваших мягких профессиональных навыков, а
+                            также ваш уровень владения каждым из них.</p>
+                    </div>
+                    <div class="cards_wrapper adt_cards" id="soft_skills"></div>
+                    <form class="ltl_block" id="adt3_form">
+                        <div class="input_line phone">
+                            <div class="input_block">
+                                <label for="adt_soft_name" class="input_head">Навык</label>
+                                <input type="text" class="input" id="adt_soft_name" name="adt_soft_name"
+                                    placeholder="Командная работа" required>
+                            </div>
+                            <div class="input_lvl">
+                                <label for="adt_lvl_soft" class="input_head">Уровень</label>
+                                <select class="input" id="adt_lvl_soft" name="adt_lvl_soft" required>
+                                    <option value="">Выберете уровень</option>
+                                    <option>Начальный</option>
+                                    <option>Средний</option>
+                                    <option>Продвинутый</option>
+                                    <option>Экспертный</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn_add" value="Добавить" id="add_soft">
+                    </form>
+                </div>
+                <div class="ltl_block">
+                    <div class="adt_text">
+                        <h3 class="h3">Публикации</h3>
+                        <p>Этот раздел демонстрирует ваши способности к академическим исследованиям. Вы можете составить
+                            список журнальных статей, материалов конференций, книг, глав из них и других научных работ в
+                            обратном хронологическом порядке, начиная с самой последней</p>
+                    </div>
+                    <div class="cards_wrapper adt_cards" id="articles" name="articles"></div>
+                    <form class="ltl_block" id="adt4_form">
+                        <div class="input_line tablet">
+                            <div class="input_block">
+                                <label for="adt_journal" class="input_head">Журнал</label>
+                                <input type="text" class="input" id="adt_journal" name="adt_journal"
+                                    placeholder="Организационная психология" required>
+                            </div>
+                            <div class="input_block">
+                                <label for="adt_year" class="input_head">Год публикации</label>
+                                <input type="number" min="1950" max="2050" step="1" placeholder="2025" class="input"
+                                    id="adt_year" name="adt_year" title="Введите год от 1950 до 2050" required>
+                            </div>
+                        </div>
+                        <div class="input_block">
+                                <label for="adt_ref" class="input_head">Ссылка</label>
+                                <textarea class="input" id="adt_ref" name="adt_ref"
+                            placeholder="Полная академическая ссылка" required></textarea>
+                            </div>
+                        <input type="submit" class="btn_add" value="Добавить" id="add_articles">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="alert" role="alert"></div>
+        <div class="ltl_block item-center">
+            <a class="btn_create h2" href="done.html" id="btn_create" role="button">Генерировать</a>
+            <a class="go_back h3" href="cv_4.html" role="button">Назад</a>
+        </div>
+    </section>
+</body>
+
+</html>
