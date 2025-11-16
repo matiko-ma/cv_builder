@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "choices.js": "^11.1.0",
-    "save": "^2.9.0"
+    "save": "^2.9.0",
+    "sortablejs": "^1.15.6"
   }
 }

@@ -15,7 +15,7 @@
         <header class="blocking_heading">
             <h1 class="h1 white">Конструктор резюме</h1>
             <nav class="menu">
-                <a class="menu_btn input_head active" href="cv_1.html">Фото</a>
+                <a class="menu_btn input_head active" aria-current="page" href="cv_1.html">Фото</a>
                 <a class="menu_btn input_head" href="cv_2.html">О себе</a>
                 <a class="menu_btn input_head" href="cv_3.html">Образование</a>
                 <a class="menu_btn input_head" href="cv_4.html">Опыт</a>
@@ -27,7 +27,7 @@
         <form class="main" action="cv_2.html" id="photo_form">
             <div class="input_line pos1">
                 <label for="posName" class="h2">Желаемая должность:</label>
-                <input class="input" id="posName" name="posName" placeholder="PR-менеджер" required>
+                <input type="text" class="input" id="posName" name="posName" placeholder="PR-менеджер" required>
             </div>
             <div class="ltl_block">
                 <h2 class="h2">Профессиональная фотография</h2>
@@ -36,7 +36,8 @@
                         <label for="photo_input">
                             <img class="photo_label">
                         </label>
-                        <input id="photo_input" name="photo_input" type="file" accept="image/*">
+                        <input type="file" id="photo_input" name="photo_input" accept="image/*"
+                            aria-label="Загрузить фотографию">
                     </div>
                     <p class="text">Профессиональная фотография в резюме необязательна, но является важным компонентом
                         вашего резюме, который позволяет потенциальным работодателям наглядно представить вас.</p>

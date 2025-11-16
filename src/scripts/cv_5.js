@@ -41,8 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
     btnCreate.addEventListener('click', (e) => {
         const savedData = sessionStorage.getItem(cardList.storageKey);
         const data = JSON.parse(savedData) || {};
+        const expCards = data['exp_card'] || [];
 
-        if (data['exp_card'].length === 0) {
+        if (expCards.length === 0) {
             e.preventDefault();
             showAlert("Недостаточно информации для генерации резюме!")
         };

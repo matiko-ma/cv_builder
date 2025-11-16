@@ -38,7 +38,7 @@
                         <div class="input_line phone">
                             <div class="input_block">
                                 <label for="adt_lng_name" class="input_head">Язык</label>
-                                <input class="input" id="adt_lng_name" name="adt_lng_name" placeholder="Английский"
+                                <input type="text" class="input" id="adt_lng_name" name="adt_lng_name" placeholder="Английский"
                                     required>
                             </div>
                             <div class="input_lvl">
@@ -52,7 +52,7 @@
                                 </select>
                             </div>
                         </div>
-                        <input class="btn_add" type="submit" value="Добавить" id="add_lang">
+                        <input type="submit" class="btn_add" value="Добавить" id="add_lang">
                     </form>
                 </div>
                 <div class="ltl_block">
@@ -67,7 +67,7 @@
                         <div class="input_line phone">
                             <div class="input_block">
                                 <label for="adt_hard_name" class="input_head">Навык</label>
-                                <input class="input" id="adt_hard_name" name="adt_hard_name" placeholder="Figma"
+                                <input type="text" class="input" id="adt_hard_name" name="adt_hard_name" placeholder="Figma"
                                     required>
                             </div>
                             <div class="input_lvl">
@@ -81,7 +81,7 @@
                                 </select>
                             </div>
                         </div>
-                        <input class="btn_add" type="submit" value="Добавить" id="add_hard">
+                        <input type="submit" class="btn_add" value="Добавить" id="add_hard">
                     </form>
                 </div>
                 <div class="ltl_block">
@@ -95,7 +95,7 @@
                         <div class="input_line phone">
                             <div class="input_block">
                                 <label for="adt_soft_name" class="input_head">Навык</label>
-                                <input class="input" id="adt_soft_name" name="adt_soft_name"
+                                <input type="text" class="input" id="adt_soft_name" name="adt_soft_name"
                                     placeholder="Командная работа" required>
                             </div>
                             <div class="input_lvl">
@@ -109,7 +109,7 @@
                                 </select>
                             </div>
                         </div>
-                        <input class="btn_add" type="submit" value="Добавить" id="add_soft">
+                        <input type="submit" class="btn_add" value="Добавить" id="add_soft">
                     </form>
                 </div>
                 <div class="ltl_block">
@@ -124,7 +124,7 @@
                         <div class="input_line tablet">
                             <div class="input_block">
                                 <label for="adt_journal" class="input_head">Журнал</label>
-                                <input class="input" id="adt_journal" name="adt_journal"
+                                <input type="text" class="input" id="adt_journal" name="adt_journal"
                                     placeholder="Организационная психология" required>
                             </div>
                             <div class="input_block">
@@ -138,15 +138,15 @@
                                 <textarea class="input" id="adt_ref" name="adt_ref"
                             placeholder="Полная академическая ссылка" required></textarea>
                             </div>
-                        <input class="btn_add" type="submit" value="Добавить" id="add_articles">
+                        <input type="submit" class="btn_add" value="Добавить" id="add_articles">
                     </form>
                 </div>
             </div>
         </div>
-        <div class="alert"></div>
+        <div class="alert" role="alert"></div>
         <div class="ltl_block item-center">
-            <a class="btn_create h2" href="done.html" id="btn_create">Генерировать</a>
-            <a class="go_back h3" href="cv_4.html">Назад</a>
+            <a class="btn_create h2" href="done.html" id="btn_create" role="button">Генерировать</a>
+            <a class="go_back h3" href="cv_4.html" role="button">Назад</a>
         </div>
     </section>
 </body>

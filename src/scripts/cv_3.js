@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!data['ed_card'] || data['ed_card'].length === 0) {
             e.preventDefault();
-            showAlert("Добавьте хотя бы один уровень образования!")
+            showAlert("Добавьте хотя бы одну запись об образовании!")
         };
     });
 });

@@ -239,7 +239,8 @@ nav {
     text-align: center;
 }
 
-.btn_create:hover {
+.btn_create:hover,
+.btn_create:focus {
     color: var(--color-accent_3);
     background-color: var(--color-accent_6);
 }
@@ -256,6 +257,7 @@ nav {
 }
 
 .menu_btn:hover,
+.menu_btn:focus,
 .active {
     color: var(--color-main);
     background-color: var(--color-accent_6);
@@ -275,7 +277,8 @@ nav {
     text-align: center;
 }
 
-.btn_next:hover {
+.btn_next:hover,
+.btn_next:focus {
     color: var(--color-accent_2);
     background-color: var(--color-accent_6);
 }
@@ -342,7 +345,8 @@ input#photo_input {
     object-fit: cover;
 }
 
-.photo_label:hover {
+.photo_label:hover,
+.photo_label:focus {
     border-color: var(--color-accent_2);
 }
 
@@ -366,7 +370,8 @@ input#photo_input {
     margin-top: 10px;
 }
 
-.btn_add:hover {
+.btn_add:hover,
+.btn_add:focus {
     color: var(--color-main);
     background-color: var(--color-accent_6);
 }
@@ -385,7 +390,8 @@ input#photo_input {
     margin-top: 10px;
 }
 
-.btn_save:hover {
+.btn_save:hover,
+.btn_save:focus {
     color: var(--color-accent_5);
     background-color: var(--color-accent_6);
 }
@@ -400,6 +406,7 @@ input#photo_input {
 }
 
 .card:hover,
+.card:focus,
 .card:active {
     border-color: var(--color-accent_5);
 }
@@ -421,7 +428,8 @@ input#photo_input {
     width: 20px;
 }
 
-.delete_svg:hover {
+.delete_svg:hover,
+.delete_svg:focus {
     fill: var(--color-accent_4);
 }
 
@@ -431,7 +439,8 @@ input#photo_input {
     width: 22px;
 }
 
-.drag_svg:hover {
+.drag_svg:hover,
+.drag_svg:focus {
     fill: var(--color-accent_5);
 }
 
@@ -445,7 +454,8 @@ input[type="checkbox"] {
     position: relative;
 }
 
-input[type="checkbox"]:hover {
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus {
     border-color: var(--color-accent_2);
 }
 
@@ -489,6 +499,7 @@ input:-webkit-autofill:active {
 }
 
 .choices__inner:hover,
+.choices__inner:focus,
 .is-open .choices__inner,
 .is-focused .choices__inner {
     border-color: var(--color-accent_2);

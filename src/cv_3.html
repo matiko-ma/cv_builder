@@ -17,7 +17,7 @@
             <nav class="menu">
                 <a class="menu_btn input_head" href="cv_1.html">Фото</a>
                 <a class="menu_btn input_head" href="cv_2.html">О себе</a>
-                <a class="menu_btn input_head active" href="cv_3.html">Образование</a>
+                <a class="menu_btn input_head active" href="cv_3.html" aria-current="page">Образование</a>
                 <a class="menu_btn input_head" href="cv_4.html">Опыт</a>
                 <a class="menu_btn input_head" href="cv_5.html">Дополнительно</a>
             </nav>
@@ -36,11 +36,12 @@
             <div class="input_line tablet">
                 <div class="input_block">
                     <label for="ed_lvl" class="input_head">Уровень образования</label>
-                    <input class="input" id="ed_lvl" name="ed_lvl" placeholder="Магистратура" required>
+                    <input type="text" class="input" id="ed_lvl" name="ed_lvl" placeholder="Магистратура" required>
                 </div>
                 <div class="input_block">
                     <label for="ed_uni" class="input_head">Учебное заведение</label>
-                    <input class="input" id="ed_uni" name="ed_uni" placeholder="Высшая Школа Экономики" required>
+                    <input type="text" class="input" id="ed_uni" name="ed_uni" placeholder="Высшая Школа Экономики"
+                        required>
                 </div>
             </div>
             <div class="input_line phone">
@@ -58,19 +59,20 @@
             <div class="input_line tablet">
                 <div class="input_block">
                     <label for="ed_fcl" class="input_head">Факультет</label>
-                    <input class="input" id="ed_fcl" name="ed_fcl" placeholder="Школа экономики и менеджмента" required>
+                    <input type="text" class="input" id="ed_fcl" name="ed_fcl"
+                        placeholder="Школа экономики и менеджмента" required>
                 </div>
                 <div class="input_block">
-                    <label for="ed_major" class="input_head">Специалиация</label>
-                    <input class="input" id="ed_major" name="ed_major" placeholder="Менеджмент" required>
+                    <label for="ed_major" class="input_head">Специализация</label>
+                    <input type="text" class="input" id="ed_major" name="ed_major" placeholder="Менеджмент" required>
                 </div>
             </div>
-            <input class="btn_add" type="submit" value="Добавить">
+            <input type="submit" class="btn_add" value="Добавить" aria-label="Добавить запись об образовании">
         </form>
-        <div class="alert"></div>
+        <div class="alert" role="alert"></div>
         <div class="ltl_block item-center">
-            <a class="btn_next h3" href="cv_4.html" id="btn_next">Следующий шаг</a>
-            <a class="go_back h3" href="cv_2.html">Назад</a>
+            <a class="btn_next h3" href="cv_4.html" id="btn_next" role="button">Следующий шаг</a>
+            <a class="go_back h3" href="cv_2.html" role="button">Назад</a>
         </div>
     </section>
 </body>

@@ -18,7 +18,7 @@
                 <a class="menu_btn input_head" href="cv_1.html">Фото</a>
                 <a class="menu_btn input_head" href="cv_2.html">О себе</a>
                 <a class="menu_btn input_head" href="cv_3.html">Образование</a>
-                <a class="menu_btn input_head active" href="cv_4.html">Опыт</a>
+                <a class="menu_btn input_head active" href="cv_4.html" aria-current="page">Опыт</a>
                 <a class="menu_btn input_head" href="cv_5.html">Дополнительно</a>
             </nav>
         </header>
@@ -39,11 +39,11 @@
             <div class="input_line tablet">
                 <div class="input_block">
                     <label for="exp_pos" class="input_head">Должность</label>
-                    <input class="input" id="exp_pos" name="exp_pos" placeholder="PR-менеджер" required>
+                    <input type="text" class="input" id="exp_pos" name="exp_pos" placeholder="PR-менеджер" required>
                 </div>
                 <div class="input_block">
                     <label for="exp_org" class="input_head">Организация</label>
-                    <input class="input" id="exp_org" name="exp_org" placeholder="Ozon" required>
+                    <input type="text" class="input" id="exp_org" name="exp_org" placeholder="Ozon" required>
                 </div>
             </div>
             <div class="input_line tablet">
@@ -71,12 +71,12 @@
                         placeholder="Что делали? Какие были достижения?"></textarea>
                 </div>
             </div>
-            <input class="btn_add" type="submit" value="Добавить">
+            <input type="submit" class="btn_add" value="Добавить">
         </form>
-        <div class="alert"></div>
+        <div class="alert" role="alert"></div>
         <div class="ltl_block item-center">
-            <a class="btn_next h3" href="cv_5.html" id="btn_next">Следующий шаг</a>
-            <a class="go_back h3" href="cv_3.html">Назад</a>
+            <a class="btn_next h3" href="cv_5.html" id="btn_next" role="button">Следующий шаг</a>
+            <a class="go_back h3" href="cv_3.html" role="button">Назад</a>
         </div>
     </section>
 </body>
