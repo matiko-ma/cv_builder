@@ -1,0 +1,23 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html src/cv_1.html src/cv_2.html src/cv_3.html src/cv_4.html src/cv_5.html --dist-dir dist --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "npx gh-pages -d ./dist"
+  },
+  "homepage": "https://matiko-ma.github.io/cv_builder/",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "choices.js": "^11.1.0",
+    "save": "^2.9.0",
+    "sortablejs": "^1.15.6"
+  }
+}
